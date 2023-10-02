@@ -128,5 +128,21 @@ topMenuEl.addEventListener('click', function(e){
     navLink.classList.add('active')
 
     //BEHAVIOR NOTE = change showingSubMenu to true if that menuLinks obj has subLinks array
-    
+      // Task 5.6
+      // ANGUS - I couldn't move onto the next item without this and couldnt figure out the solution
+    const linkData = menuLinks.find(function(linkObj) {
+    return linkObj.text === link.textContent;
+    });
+    showingSubMenu = 'subLinks' in linkData;
+
+    function buildSubMenu(subLinks) {
+        subMenuEl.innerHTML = '';
+        subLinks.forEach(function(link) {
+          const linkEl = document.createElement('a');
+          linkEl.setAttribute('href', link.href);
+          linkEl.textContent = link.text;
+          subMenuEl.appendChild(linkEl);
+        });
+      }
+
 });
