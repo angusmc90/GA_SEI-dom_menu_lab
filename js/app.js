@@ -135,14 +135,22 @@ topMenuEl.addEventListener('click', function(e){
     });
     showingSubMenu = 'subLinks' in linkData;
 
-    function buildSubMenu(subLinks) {
-        subMenuEl.innerHTML = '';
-        subLinks.forEach(function(link) {
-          const linkEl = document.createElement('a');
-          linkEl.setAttribute('href', link.href);
-          linkEl.textContent = link.text;
-          subMenuEl.appendChild(linkEl);
-        });
+    if (showingSubMenu) {
+        buildSubMenu(linkData.subLinks);
+        subMenuEl.style.top = '100%';
+      } else {
+        subMenuEl.style.top = '0';
+        mainEl.innerHTML = '<h1>about</h1>';
       }
 
 });
+
+function buildSubMenu(subLinks) {
+    subMenuEl.innerHTML = '';
+    subLinks.forEach(function(link) {
+      const linkTag = document.createElement('a');
+      linkTag.setAttribute('href', link.href);
+      linkTag.textContent = link.text;
+      subMenuEl.appendChild(linkTag);
+    });
+  }
