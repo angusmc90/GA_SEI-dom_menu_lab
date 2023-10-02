@@ -154,3 +154,19 @@ function buildSubMenu(subLinks) {
       subMenuEl.appendChild(linkTag);
     });
   }
+
+subMenuEl.addEventListener('click', function(e) {
+    evt.preventDefault();
+    const link = e.target;
+    if (link.tagName !== 'A') return;
+    console.log(link.textContent);
+
+    showingSubMenu = false;
+    subMenuEl.style.top = '0';
+
+    topMenuLinks.forEach(function(link) {
+        link.classList.remove('active');
+    })
+
+    mainEl.innerHTML = `<h1>${link.textContent}</h1>`;
+})
