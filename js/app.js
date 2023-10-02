@@ -25,10 +25,12 @@ topMenuEl.style.backgroundColor = topBg
 topMenuEl.classList.add('flex-around');
 // console.log(topMenuEl)
 
+/*
+FIRST ATTEMPT AT TASK 3
 function createMenu (e) {
     const linkEl = document.createElement('a');
     const linkAddress = e.href;
-    linkEl.classList.add(linkAddress);
+    linkEl.setAttribute("href", e.href);
     const linkText = e.text;
     linkEl.innerText = linkText;
     topMenuEl.appendChild(linkEl);
@@ -36,3 +38,29 @@ function createMenu (e) {
 }
 
 menuLinks.forEach(createMenu());
+*/
+
+menuLinks.forEach(
+    function(e) {
+        const linkEl = document.createElement('a');
+        linkEl.setAttribute("href", e.href);
+        // ANGUS - See questions below
+        const linkText = e.text;
+        linkEl.innerText = linkText;
+        topMenuEl.appendChild(linkEl);
+        console.log(linkEl)
+    }   
+);
+
+/*
+
+QUESTION ON TASK 3 - 
+
+The code commented out in FIRST ATTEMPT returned the following error:
+
+Uncaught TypeError: Cannot read properties of undefined (reading 'href')
+    at createMenu (app.js:30:27)
+    at app.js:38:19
+    
+Why did I get the error above but when I applied what I saw in the sol'n provided - calling the function inside of the forEach method - it worked as expected?
+*/
