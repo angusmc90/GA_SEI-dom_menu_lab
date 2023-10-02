@@ -66,9 +66,20 @@ Why did I get the error above but when I applied what I saw in the sol'n provide
 
 */
 
+
+
 const subMenuEl = document.getElementById('sub-menu');
-subMenuEl.style.height = "100%"
+subMenuEl.style.height = "100%";
 const subMenuColor = "var(--sub-menu-bg)"
-subMenuEl.classList.add(subMenuColor)
-subMenuEl.classList.add("flex-around")
-console.log(document.querySelector('header'))
+subMenuEl.style.backgroundColor = subMenuColor;
+subMenuEl.classList.add("flex-around");
+subMenuEl.style.postion = "absolute";
+subMenuEl.setAttribute("top", 0);
+
+// console.log(document.querySelector('header'))
+
+/*
+
+Note that the progress check in the assignment for task 4 is confusing - screenshot makes it look like the sub menu bar should be showing when it doesbt???
+
+*/
