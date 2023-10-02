@@ -48,7 +48,7 @@ menuLinks.forEach(
         const linkText = e.text;
         linkEl.innerText = linkText;
         topMenuEl.appendChild(linkEl);
-        console.log(linkEl)
+        // console.log(linkEl)
     }   
 );
 
@@ -63,4 +63,12 @@ Uncaught TypeError: Cannot read properties of undefined (reading 'href')
     at app.js:38:19
     
 Why did I get the error above but when I applied what I saw in the sol'n provided - calling the function inside of the forEach method - it worked as expected?
+
 */
+
+const subMenuEl = document.getElementById('sub-menu');
+subMenuEl.style.height = "100%"
+const subMenuColor = "var(--sub-menu-bg)"
+subMenuEl.classList.add(subMenuColor)
+subMenuEl.classList.add("flex-around")
+console.log(document.querySelector('header'))
