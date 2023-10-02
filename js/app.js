@@ -170,3 +170,6 @@ subMenuEl.addEventListener('click', function(e) {
 
     mainEl.innerHTML = `<h1>${link.textContent}</h1>`;
 })
+
+// ANGUS - I think there is a typo in here somewhere bc I get an error meassage in the console whenever i click a sub menu link
+// says "crbug/1173575, non-JS module files deprecated"
