@@ -125,8 +125,8 @@ topMenuEl.addEventListener('click', function(e){
     )
 
     //BEHAVIOR NOTE - Add active class to clicked link
-    if (!navLink.classList.contains('active')){
-        navLink.classList.add('active')
-        return
-    }
+    navLink.classList.add('active')
+
+    //BEHAVIOR NOTE = change showingSubMenu to true if that menuLinks obj has subLinks array
+    
 });
