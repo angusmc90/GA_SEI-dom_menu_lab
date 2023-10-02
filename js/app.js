@@ -113,10 +113,13 @@ topMenuEl.addEventListener('click', function(e){
         navLink.classList.remove('active');
         let showingSubMenu = false;
         subMenuEl.setAttribute("top", 0);
-        return
+        return;
     }
-
     
+    //NOTE - Removing active class from each link - Why is this AND the above necessary? Cant just this be enough?
+    topMenuLinks.forEach(
+        function(navLink) {
+            navLink.classList.remove('active')
+        }
+    )
 });
-
-// topMenuEl.addEventListener('click', console.log("TEST"))
