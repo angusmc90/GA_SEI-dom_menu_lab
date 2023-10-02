@@ -1,4 +1,12 @@
-console.log("DOM Lab Homework")
+console.log("DOM Lab Homework - Angus")
+
+// Menu data structure
+const menuLinks = [
+    {text: 'about', href: '/about'},
+    {text: 'catalog', href: '/catalog'},
+    {text: 'orders', href: '/orders'},
+    {text: 'account', href: '/account'},
+  ];
 
 const mainEl = document.querySelector('main')
 // console.log(mainEl)
@@ -16,3 +24,15 @@ const topBg = 'var(--top-menu-bg)'
 topMenuEl.style.backgroundColor = topBg
 topMenuEl.classList.add('flex-around');
 // console.log(topMenuEl)
+
+function createMenu (e) {
+    const linkEl = document.createElement('a');
+    const linkAddress = e.href;
+    linkEl.classList.add(linkAddress);
+    const linkText = e.text;
+    linkEl.innerText = linkText;
+    topMenuEl.appendChild(linkEl);
+    console.log(linkEl)
+}
+
+menuLinks.forEach(createMenu());
