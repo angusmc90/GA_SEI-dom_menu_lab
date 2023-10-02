@@ -94,3 +94,17 @@ subMenuEl.setAttribute("top", 0);
 Note that the progress check in the assignment for task 4 is confusing - screenshot makes it look like the sub menu bar should be showing when it doesbt???
 
 */
+
+const topMenuLinks = document.querySelectorAll('#top-menu a')
+let showingSubMenu = false;
+topMenuEl.addEventListener('click', function(e){
+    e.preventDefault();
+    const navLink = e.target;
+    if (navLink.tagName !== "A") {
+        // This wasn't working unless I made the a capital here - why???
+        return
+    };
+    console.log(navLink.textContent);
+});
+
+// topMenuEl.addEventListener('click', console.log("TEST"))
