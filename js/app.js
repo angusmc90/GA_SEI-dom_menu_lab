@@ -100,11 +100,23 @@ let showingSubMenu = false;
 topMenuEl.addEventListener('click', function(e){
     e.preventDefault();
     const navLink = e.target;
+
+    //NOTE - i dont think I understand why this part is doing? there is nothing in the submenu right now and the assignment doesn't look like it's adding anything else - would this be necessary code?
     if (navLink.tagName !== "A") {
         // This wasn't working unless I made the a capital here - why???
         return
     };
     console.log(navLink.textContent);
+
+    //NOTE - Clicking on a link that you just clicked on will "unclick"/"unactivate" it
+    if (navLink.classList.contains('active')) {
+        navLink.classList.remove('active');
+        let showingSubMenu = false;
+        subMenuEl.setAttribute("top", 0);
+        return
+    }
+
+    
 });
 
 // topMenuEl.addEventListener('click', console.log("TEST"))
